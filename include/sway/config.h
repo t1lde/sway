@@ -130,6 +130,12 @@ struct input_config_tool {
 	enum sway_tablet_tool_mode mode;
 };
 
+enum input_config_middle_paste {
+	MIDDLE_PASTE_DEFAULT,
+	MIDDLE_PASTE_DISABLED,
+	MIDDLE_PASTE_ENABLED,
+};
+
 /**
  * options for input devices
  */
@@ -145,6 +151,7 @@ struct input_config {
 	int dwt;
 	int left_handed;
 	int middle_emulation;
+	int middle_paste;
 	int natural_scroll;
 	float pointer_accel;
 	float scroll_factor;

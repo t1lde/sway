@@ -28,6 +28,7 @@ struct input_config *new_input_config(const char* identifier) {
 	input->send_events = INT_MIN;
 	input->click_method = INT_MIN;
 	input->middle_emulation = INT_MIN;
+	input->middle_paste = MIDDLE_PASTE_DEFAULT;
 	input->natural_scroll = INT_MIN;
 	input->accel_profile = INT_MIN;
 	input->pointer_accel = FLT_MIN;
@@ -66,6 +67,9 @@ void merge_input_config(struct input_config *dst, struct input_config *src) {
 	}
 	if (src->middle_emulation != INT_MIN) {
 		dst->middle_emulation = src->middle_emulation;
+	}
+	if (src->middle_paste != MIDDLE_PASTE_DEFAULT) {
+		dst->middle_paste = src->middle_paste;
 	}
 	if (src->natural_scroll != INT_MIN) {
 		dst->natural_scroll = src->natural_scroll;

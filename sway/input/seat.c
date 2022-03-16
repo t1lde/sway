@@ -525,11 +525,22 @@ static void handle_request_set_selection(struct wl_listener *listener,
 	wlr_seat_set_selection(seat->wlr_seat, event->source, event->serial);
 }
 
+//static void primary_selection_source_no_send(struct wlr_primary_selection_source *source, const char *mime_type, int fd) {}
+
 static void handle_request_set_primary_selection(struct wl_listener *listener,
 		void *data) {
 	struct sway_seat *seat =
 		wl_container_of(listener, seat, request_set_primary_selection);
 	struct wlr_seat_request_set_primary_selection_event *event = data;
+
+	if (config->handler_context.input_config->middle_paste == MIDDLE_PASTE_DISABLED) {
+		//const struct wlr_primary_selection_source_impl replace_impl = {
+		//	.send = primary_selection_source_no_send,
+		//	.destroy = event->source->impl->destroy,
+		//};
+		//event->source->impl = &replace_impl;
+	}
+
 	wlr_seat_set_primary_selection(seat->wlr_seat, event->source, event->serial);
 }
 
