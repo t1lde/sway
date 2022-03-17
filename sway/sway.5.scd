@@ -71,9 +71,6 @@ The following commands may only be used in the configuration file.
 	*wordexp*(3) for details). The same include file can only be included once;
 	subsequent attempts will be ignored.
 
-*primary_selection* enabled|disabled
-   Enables or disables the primary selection clipboard. 
-
 *swaybg_command* <command>
 	Executes custom background _command_. Default is _swaybg_. Refer to
 	*sway-output*(5) for more information.
@@ -748,6 +745,9 @@ The default colors are:
 	If _smart_ (the default), the dialog will be displayed. If _ignore_, the
 	dialog will not be rendered. If _leave_fullscreen_, the view will exit
 	fullscreen mode and the dialog will be rendered.
+
+*primary_selection* enabled|disabled
+	Enable or disable the primary selection clipboard.
 
 *set* $<name> <value>
 	Sets variable $_name_ to _value_. You can use the new variable in the
