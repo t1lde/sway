@@ -71,6 +71,9 @@ The following commands may only be used in the configuration file.
 	*wordexp*(3) for details). The same include file can only be included once;
 	subsequent attempts will be ignored.
 
+*primary_selection* enabled|disabled
+   Enables or disables the primary selection clipboard. 
+
 *swaybg_command* <command>
 	Executes custom background _command_. Default is _swaybg_. Refer to
 	*sway-output*(5) for more information.
